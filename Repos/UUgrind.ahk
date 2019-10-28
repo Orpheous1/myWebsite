@@ -28,10 +28,11 @@ Class randomize                       ;Simple randomize class(Yparxei periptwsh 
   }
 }
 Mylabel:
+s := randomize.Num(1,5)                ;Randomize seed for eagerness. To simulate a real human higher eagerness will make it work faster and end faster, lower will make it work slower but end slower. Average time spent is linearly proportional to seed s.
 While 1                                ;Main infinite* Loop
 {
   c = 1                                ;Main Loop is running
-  d := randomize.Num(1,10)             ;Randomize string length
+  d := randomize.Num(1,15*s)           ;Randomize string length
   b := randomize.Char(d)               ;Initialize variable b to a random String
   len := StrLen(b)
   Send %b%                             ;Sends to the keyboard the random string of characters
@@ -44,16 +45,18 @@ While 1                                ;Main infinite* Loop
     c = 0                              ;Main Loop broke as expected
     break                              ;break the loop
   }
-                                       ;The expected value (since X ~ Geo(p)) is 1/p. The expected time before breaking is (1/p)*{average time between iterations}. Default implementation has an average expected time until break : (1/(1-(99300/100000)))*((10000+5)/2) ms = 0.198511905 hours
-  randomize.Sleep(5,10000)             ;Sleep a random amount of time to humanify (This is what you'll be averaging over for the above comment). 
+                                             ;The expected value (since X ~ Geo(p)) is 1/p. The expected time before breaking is (1/p)*{average time between iterations}. Default implementation assuming s=1 has an average expected time until break : (1/(1-(99300/100000)))*((10000+5)/2) ms = 0.198511905 hours
+  randomize.Sleep(5,10000/s)                 ;Sleep a random amount of time to humanify (This is what you'll be averaging over for the above comment). 
 }
 if (c = 0)                                   ;If the Main loop broke. This is just a failsafe to check while debugging whether the Main loop didn't break as expected
 {
   username = your_username                   ;You have to change these. It would be too time consuming to work on an implementation that doesn't store your password in plain-text. Sorry
   password = your_password                   ;This means if you ever share the script, remember to change these back to anything but your credentials
   folder = public_html
-  askhsh = askhsh1.html
+  askhsh = fakeaskhsh.html
   randomize.Sleep(14400000, 32800000)        ;Sleep 4-8 hours, next is the sequence to reopen PuTTY
+  Send !{F4}                                 ;Closes existing processes if they exist, otherwise sends shut down signal that just gets overwritten on the confirmation query by Windowsbutton+s
+  randomize.Sleep(3000,10000)
   Send #s                                    ;This sends a Windowsbutton+s combination, I don't remember if that opens the search window in Windows Vista/7/8/8.1. If not, look into the "Run" command in the AHK language documentation and edit the code to make it backwards compatible with any Windows OS
   randomize.Sleep(3000,10000)                ;These Sleeps don't need to be random, that's your side, not the server's and it has no way of knowing how fast you do these.
   SendRaw PuTTY
@@ -71,7 +74,7 @@ if (c = 0)                                   ;If the Main loop broke. This is ju
   SendRaw %password%
   Send {Enter}
   randomize.Sleep(3000,10000)
-  SendRaw cd %folder% && nano %askhsh%      ;if you changed your folder path you need to change the first part or include the fullpath in line 54. The second part will create an html file anyway due to nano. The && ensures that it will only run if the cd %folder% command succeeded.
+  SendRaw cd %folder% && nano %askhsh%      ;if you changed your folder path you need to change the first part or include the fullpath in the folder variable. The second part will create an html file anyway due to nano. The && ensures that it will only run if the cd %folder% command succeeded.
   Send {Enter}
   randomize.Sleep(3000,10000)
   Send {Enter}                              ;Optional
@@ -93,7 +96,7 @@ else
 ;How to use:
 ;This is an AHK script. It automates keystrokes. I won't include a compiled executable because you should read the source and understand how it works. (Programatistiko ma8hma kanoume e3allou. Kai ekatsa evala 1 ekatommyrio epe3hghtika comments, katse toulaxiston na ta diabaseis)
 ;To run the script download AHK (https://autohotkey.com/download/ahk.zip), then extract the standalone AutoHotKeyU64.exe anywhere you want.
-;Edit lines 52 and 53 in the code to include your username and password(ayta poy xrhsimopoieis gia na mpeis sto pleiades.math.uoi.gr mesw PuTTY).
+;Edit lines 53 and 54 in the code to include your username and password(ayta poy xrhsimopoieis gia na mpeis sto pleiades.math.uoi.gr mesw PuTTY).
 ;Open PuTTY, login with your username and password and open any file with nano(doesn't matter which, you will only open a buffer, write and remove some stuff and never save it to a file anyway).
 ;Close every other window but PuTTY(you should close the text editor you're using to read this later).
 ;Drag and drop this script(UUgrind.ahk) in the AutoHotKeyU64.exe executable you extracted before(syre me to pontiki). You might hear some Windows sounds, that's because the script is sending keystrokes while your cursor did nto click in an environment that's supposed to receive those keystrokes. That's fine.
@@ -116,6 +119,6 @@ else
 ;y = 100 * geocdf(x,0.007); %p=0.007
 ;plot(x,y,'-r')
 ;title('Chance of stopping over time')
-;xlabel({'Number of iterations','Each iteration takes 5 ms to 10 sec w/ average 5.0025 sec'})  %this label will be incorrect if you change the time between iterations in line 48
+;xlabel({'Number of iterations','Each iteration takes 5 ms to 10 sec w/ average 5.0025 sec'})  %this label will be incorrect if you change the time between iterations in line 49
 ;ylabel('% Chance of stopping in the first n interations')
 ;%print -dpng 1.png; %Remove the first % at the start of this line(the one before print, not the one before Remove) if you're using an online IDE/compiler
