@@ -23,7 +23,7 @@ astart = 99300; %%to plot various values of breakpoints set the starting point
 astep = 100;    %%set the jump
 astop = 99900;  %%set the stop point
 %This means that with the default values it will plot 7 lines. One for 99300, one for 99300+astep=99400, one for 99300+2*astep=99500 etc until it reaches astop=99900
-abreakpoint = [astart:astep:astop];  %Transform the values above into a line matrix so we can manipulate it in the for loop
+abreakpoint = [astart:astep:astop];  %Transform the values above into a row matrix so we can manipulate it in the for loop
 Color = rand(length(abreakpoint),3);
 for i=1:length(abreakpoint);
     x = [1:0.01:700];        %1 step works just as fine, it just won't be as accurate if you zoom in enough. If on a slow pc/online IDE set x = [1:400];
