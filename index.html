@@ -14,6 +14,8 @@
       text-align: center;
     }
   </style>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <title>Προσωπική σελίδα του 10989</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -59,19 +61,31 @@
           μαθηματικού. Ολα θα είναι στα αγγλικά.</p>
         <ul>
           <li><a href="Repos/UUgrind.ahk" download>UUgrind (AHK)</a></li>
-          <p> AHK scripting πρόγραμμα που μαζεύει UU mins για να μπορείτε να παρετε εργασία. Εφαρμόστηκαν πολλές
+          <p>AHK scripting πρόγραμμα που μαζεύει UU mins για να μπορείτε να παρετε εργασία. Εφαρμόστηκαν πολλές
             τεχνικές "ανθρωποποίησης" του αλγορίθμου για να μην είναι τόσο προφανές πως δεν είστε εσείς που μαζεύετε τις
             ώρες. Πρέπει να το κάνεις edit και να βάλεις τα στοιχεία σου για το PuTTY. Μεσα στον κώδικα
             συμπεριλαμβάνονται οδηγίες χρήσης.</p>
+          <li><a href="Repos/UUgrindCorollary.m" download>UUGrind Corollary (MATLAB)</a></li>
+          <p>Ένα MATLAB script για visualization των
+            <ul>
+              <li>Aναμενόμενων μέσων τιμών χρόνου μέχρι να βγεί από το σύστημα για διάφορες τιμές eagerness και
+                breakpoints του UUgrind.ahk</li>
+              <li>Αθροιστικών συνάρτησεων κατανομής των τυχαίών μεταβλητών \(X_{a}\)\(= \{\)να βγεί απο το σύστημα στο
+                \(N\)-οστο iteration | breakpoint \(=a\}\) για διάφορα breakpoints</li>
+            </ul>
+          </p>
           <li><a href="https://github.com/Orpheous1/FFNN/releases/download/v1/FFNN1.rar" download>Feedforward Digit
               Recognition Neural Network (MATLAB) </a></li>
           <p>Simple Feedforward Νευρωνικό δίκτυο με σκοπό την αναγνώριση χειρόγραφων ψηφίων. Implementation σε MATLAB.
-            Μέρος μιας εργασίας για ένα class του Andrew NG, επεκταμένο σε 2 hidden layers και σε ολόκληρο το MNIST
-            database χωρίς preprocessing(28x28) για να επιτύχει >98.25% test accuracy στο MNIST database. Για να το
+            Μέρος μιας εργασίας για ένα class του Andrew NG, επεκταμένο σε \(2\) hidden layers και σε ολόκληρο το MNIST
+            database χωρίς preprocessing(\(28\times28\)) για να επιτύχει \(>98.25%\) test accuracy στο MNIST database.
+            Για να το
             χρησιμοποιήσεις κάνε extract το rar σε καποιον φάκελο και τρέξε το init.mlx. Τα default options είναι για
-            αρχιτεκτονική δικτύου 784x40x40(x10)x1, με optimization algorithm στο backpropagation 200 iteration μιας
+            αρχιτεκτονική δικτύου \(784\times40\times40\;\,(\times10)\times1\), με optimization algorithm στο
+            backpropagation \(200\) iteration μιας
             παραλλαγης του BFGS Quasi-Newton. Μπορείς να αλλάξεις το size των hidden layer μέσα από το init.mlx. Το
-            98.26% test accuracy επιτευχθηκε με 1500 iterations σε αρχιτεκτονική δικτύου 784x784x784(x10)x1.
+            \(98.26%\) test accuracy επιτευχθηκε με \(1500\) iterations σε αρχιτεκτονική δικτύου
+            \(784\times784\times784\;\,(\times10)\times1\).
             Συμπεριλαμβάνεται snippet MATLAB για visualization.</p>
         </ul>
       </div>
