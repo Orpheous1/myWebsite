@@ -9,7 +9,7 @@ b = 1:seed; %We set this instead of "for s = 1:seed <<code>> end" because we'll 
 Color = rand(length(b),3); %Randomize colors of the lines. We have to choose 3 for the second dimension because plot uses RGB triplets
 for s = b
     M = strcat("s=",num2str(s)); %We have to feed the names of the lines as strings. A different implementation is used in the next cdf figures
-    y = (1/(1-(abreakpoint/100000)))*(((10000/s)+5)/2) * 1.66666667 * 10^(-5);
+    y = (1/(1-(abreakpoint/100000)))*(((10000/s)+5)/2) * 1.66666667 * 10^(-5); %Perases pi8anothtes 1 e? ;)
     xlim([0 1]); %Doesn't matter, they're all horizontal lines
     ylim([0 1.1*(1/(1-(abreakpoint/100000)))*(((10000/(min(b))+5)/2) * 1.66666667 * 10^(-5))]); %We expand the plot vertically to 110% of the height of our highest line for visibility
     yline(y, '-', M, 'color', Color(s,:));
