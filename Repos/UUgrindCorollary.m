@@ -5,7 +5,7 @@
 figure
 abreakpoint = 99300; %% The breakpoint of our a in UUgrind.ahk
 seed = 5; %% Our eagerness seed in UUgrind.ahk
-b = 1:seed; %We set this instead of "for s = 1:seed <<code>> end" because we'll need to grab the lowest value later to get the highest line
+b = 1:seed; %We set this instead of "for s = 1:seed <<code>> end" because we'll need to grab the lowest value later to get the highest line while inside the loop
 Color = rand(length(b),3);
 for s = b
     M = strcat("s=",num2str(s)); %We have to feed the names of the lines as strings. A different implementation is used in the next cdf figures
