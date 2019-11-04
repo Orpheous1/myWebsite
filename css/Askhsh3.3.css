@@ -1,0 +1,157 @@
+ul.horizontal {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li.horizontal {
+  float: left;
+  border-right: 1px solid #bbb;
+}
+
+li.horizontal:last-child {
+  border-right: none;
+}
+
+li.horizontal a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li.horizontal a:hover:not(.active) {
+  background-color: #111;
+}
+
+li.horizontal.active {
+  background-color: #4CAF50;
+}
+
+body {
+  margin: 0;
+  z-index: -1;
+}
+
+ul.vertical {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 7.4%;
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li.vertical a {
+  display: block;
+  background-color: rgb(126, 126, 255);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li.vertical a.active {
+  background-color: #4CAF50;
+  color: red;
+}
+
+li.vertical a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+#wrapper {
+  float: left;
+  width: 50%;
+  background: blue;
+}
+
+.iframe {
+  position: fixed;
+  width: 90%;
+  height: 800px;
+  top: 100px;
+  left: 400px;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown:hover {
+  background-color: blue;
+}
+
+.dropbtn{
+  background-color: blue;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+ul.verticald {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 10%;
+  background-color: white;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+li.verticald a {
+  display: block;
+  background-color: rgb(110, 245, 255);
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li.verticald a.active {
+  background-color: #4CAF50;
+  color: red;
+}
+
+li.verticald a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
