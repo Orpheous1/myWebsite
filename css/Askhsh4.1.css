@@ -1,0 +1,55 @@
+.maindiv {
+  z-index: -1;
+}
+
+.panel {
+  position: relative;
+  background-image: url("");
+  width:47%;
+  height:47%;
+  top: 3%;
+  bottom: 2%;
+  left: 3%;
+  right: 2%;
+  z-index: 2;
+}
+
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+div {
+  width: 50%;
+  height: 50%;
+  float: left;
+  background-color: purple;
+  z-index: -1;
+}
+
+#div1 {
+  background-image:url('../Images/claus1.png');
+}
+
+#div2 {
+  background-image:url('../Images/claus2.jpg');
+}
+
+#div3 {
+  background-image:url('../Images/claus4.jpg');
+}
+
+#div4 {
+  background-image:url('../Images/claus3.jpg');
+}
+
+.div1 {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  float: right;
+  background-color: white;
+  top: 50%;
+  z-index: 0;
+}
