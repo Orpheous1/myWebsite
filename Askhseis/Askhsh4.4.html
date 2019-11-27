@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="../Javascripts/Askhsh4.4.js"></script>
+  <link rel="stylesheet" href="../css/Askhsh4.4.css" />
+</head>
+
+<body>
+  <form name="order" id="order">
+    <table hidden><!--Για να προσθέσεις δικά σου προιοντα στο μελλον, αντι για form ισως ειναι καλυτερα ανεβάζοντας καποιο json απευθείας στον server, δεν έχω χρόνο να το φτιάξω-->
+      <tr>
+        <td>
+          <label for="product_name">Product Name:</label>
+        </td>
+        <td>
+          <input id="product_name" name="product" type="text" size="28" required />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="product">Product Image:</label>
+        </td>
+        <td>
+          <input id="product_img" name="product" type="text" size="28" required />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <label for="price">Price:</label>
+        </td>
+        <td>
+          <input id="price" name="price" size="28" required />
+        </td>
+      </tr>
+    </table>
+    <input type="button" id="btnAddProduct" onclick="addProduct();" value="Show Products">
+  </form>
+  <br>
+  <p id="demo"></p> <br />
+  <h2>Cart</h2>
+  <p id="demo2"></p>
+  <h2>Total:</h2>
+  <p id="demo3"></p>
+  <p><h5><font color="blue">Δέν έχω χρόνο να φτιάξω τα bugs, αρχισα να το γράφω 2 ωρες πριν το εργαστήριο.</font></h5></p>
+</body>
+
+</html>
