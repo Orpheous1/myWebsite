@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+  <form name="myform">
+    <table>
+      <tr>
+        <th> Ονοματεπώνυμο: </th>
+        <td> <input type="text" name="fname" placeholder="Όνομα Επίθετο" required /> </td>
+      </tr>
+      <tr>
+        <th> Ημερομηνία: </th>
+        <td><input type="date" name="mdate" placeholder="Date" required /> </td>
+      </tr>
+      <tr>
+        <th> ΑΦΜ:</th>
+        <td><input type="number" name="AFM" />
+      </tr>
+      <tr>
+        <th> Ποσό: </th>
+        <td><input type="text" name="poso" placeholder="Μέχρι 1000"></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td colspan=2><input type="button" value="Υπολογισμός" onclick="check_values()" /></td>
+      </tr>
+    </table>
+  </form><br>
+  <div style="white-space: pre-wrap;">
+    <p>Τα σωστά regex(Αν το input type για το date είναι &lt;input type="date" κλπ κλπ&gt;) είναι:
+      <code>
+        var fname_exp = /^\w+(?:\s+\w+)(?:\s+\w+)|\w+(?:\s+\w+)$/;
+        var mdate_exp = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+        var afm_exp = /^\d{9}$/;
+        var poso_exp = /^\d{1,4}\.\d{1,2}|^\d{1,4}$/;
+    </code></p>
+  </div>
+  <script>
+    function check_values() {
+      var fname = document.myform.fname.value;
+      var mdate = document.myform.mdate.value;
+      var afm = document.myform.AFM.value;
+      var poso = document.myform.poso.value;
+      var fname_exp = /^\w+(?:\s+\w+)(?:\s+\w+)|\w+(?:\s+\w+)$/;
+      if (!fname_exp.test(fname)) {
+        alert("Λάθος Ονοματεπώνυμο");
+        document.myform.fname.focus();
+      }
+      var mdate_exp = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/;
+      if (!mdate_exp.test(mdate)) {
+        alert("Λάθος Ημερομηνία");
+        document.myform.mdate.focus();
+      }
+      var afm_exp = /^\d{9}$/;
+      if (!afm_exp.test(afm)) {
+        alert("Λάθος ΑΦΜ");
+        document.myform.AFM.focus();
+      }
+      var poso_exp = /^\d{1,4}\.\d{1,2}|^\d{1,4}$/;
+      if (!poso_exp.test(poso)) {
+        alert("Έως 4 ψηφία με δεκαδικό μέρος 2 ψηφίων!");
+        document.myform.poso.focus();
+        return;
+      } else {
+        var mposo = parseFloat(poso);
+        if (mposo > 1000) {
+          alert("Ποσό έως 1000!");
+          document.myform.poso.focus();
+          return;
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

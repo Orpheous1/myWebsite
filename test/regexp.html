@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>JavaScript Regular Expressions</h2>
+  <p>Click the button to do a case-insensitive search for "w3schools" in
+  a string.</p>
+  <button onclick="myFunction()">Try it</button>
+  <p id="demo"></p>
+  <script>
+    function myFunction() {
+      var str = "Hello my name is Sotirios Kontogiannis ";
+      var patt = /SotiriOs/i;
+      var str2 = "The best things in life are free";
+      var patt2 = new RegExp("\S*ee$");
+      var res = patt2.test(str2);  
+      console.log(patt);
+      var result = str.match(patt);
+      var result1 = patt.test(patt);
+      document.getElementById("demo").innerHTML = result;
+      document.getElementById("demo").innerHTML += "<br>" + res;
+    }
+  </script>
+</body>
+</html>

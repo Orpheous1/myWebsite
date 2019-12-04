@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <table>
+    <form action="process.php" method="get">
+      <tr>
+        <td>Όνομα</td>
+        <td>
+            <input type="text" name ="Name" placeholder="Όνομα" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Επώνυμο</td>
+        <td>
+            <input type="text" name ="Surname" placeholder="Επώνυμο" required>
+        </td>
+      </tr>
+      <tr>
+        <td>Φύλο</td>
+        <td>
+            <input type="radio" name ="gender" value="male" checked>Άρρεν
+            <input type="radio" name ="gender" value="female">Θύλη
+        </td>
+      </tr>
+      <tr>
+        <td>Αγαπημένο Μάθημα</td>
+        <td>
+            <input type="checkbox" name ="favsubject" value="242">242
+            <input type="checkbox" name ="favsubject" value="242">343
+            <input type="checkbox" name ="favsubject" value="242">741
+            <input type="checkbox" name ="favsubject" value="άλλο">άλλο
+        </td>
+      </tr>
+      <tr>
+        <td>Τμήμα</td>
+        <td>
+          <select name="τμήμα">
+            <option>Μαθηματικό
+            <option>Πληροφορική
+        </td>
+      </tr>
+      <th colspan = 2>
+        <input type="submit" value="Αποστολή">
+        <input type="reset" value="Εκκαθάριση">
+      </th>
+    </form>
+  </table>
+</body>
+</html>

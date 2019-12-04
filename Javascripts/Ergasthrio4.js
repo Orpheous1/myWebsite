@@ -49,7 +49,7 @@ function mean(array) {
   }
   return temp;
 }
-function std(array, mean) { //We include the mean in the definition so our client doesn't calculate the mean for each sum iteration
+function std(array, mean) { //We include the mean in the definition so our client doesn't calculate the mean for each sum iteration. This might be unnecessary since the js JIT compiler might optimize this by default but I don't know how js compilers work.
   var temp = 0;
   for (var i = 0; i < array.length; i++) {
     temp += (1 / array.length) * Math.pow(array[i] - mean, 2);

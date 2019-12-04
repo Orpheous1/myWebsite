@@ -31,6 +31,7 @@ var products = [
   }
 ];
 var cart = [];
+var Total = null;
 function addProduct() {
   var product_name = document.getElementById("product_name").value;
   var product_img = document.getElementById("product_img").value;
@@ -47,21 +48,22 @@ function addProduct() {
   products.push(newProduct);
   var table = "<table border='1' >";
   table += "<td>Product Name</td>";
-  table += "<td>Product Image</td>";
+  table += "<td class=\"prodimage\">Product Image</td>";
   table += "<td>Price</td>";
   table += "<td>Action</td>";
   for (var i = 0; i < products.length - 1; i++) {
     table += "<tr>";
     table += "<td>" + products[i].product_name + "</td>";
-    table += "<td><img src=" + products[i].product_img + "></td>"; ////
-    table += "<td><" + products[i].product_price + "</td>";
-    table += "<td><button type='submit' onClick='deleteProd(\"" + products[i].product_name + "\", this);'/>delete Item</button> &nbsp <button type='submit' onClick='addtoCart(\"" + products[i].product_name + "\", this);'/>Add to Cart</button></td>";
+    table += "<td class=\"prodimage\"><img src=" + products[i].product_img + "></td>"; ////
+    table += "<td style=\"text-align: center\">" + products[i].product_price + "</td>";
+    table += "<td style=\"text-align: center\"><button type='submit' onClick='deleteProd(\"" + products[i].product_name + "\", this);'/>Delete Item</button> &nbsp <button type='submit' onClick='addtoCart(\"" + products[i].product_name + "\", this);'/>Add to Cart</button></td>";
     table += "</tr>";
   }
   table += "</table>";
   document.getElementById("demo").innerHTML = table;
-
+  document.getElementById("btnAddProduct").remove();
 }
+
 function deleteProd(product_name, a) {
   a.parentNode.parentNode.parentNode.removeChild(a.parentNode.parentNode);
   for (var i = 0; i < products.length; i++) {
@@ -70,8 +72,19 @@ function deleteProd(product_name, a) {
     }
   }
 }
-function addtoCart(product_name) {
 
+function deleteProdCart(product_name, a) {
+  a.parentNode.parentNode.parentNode.removeChild(a.parentNode.parentNode);
+  for (var i = 0; i < cart.length; i++) {
+    if (cart[i].product.product_name == product_name) {
+      Total -= parseFloat(cart[i].product.product_price);
+      document.getElementById('demo3').innerHTML = Total;
+      cart.splice(i, 1);
+    }
+  }
+}
+
+function addtoCart(product_name) {
   for (var i = 0; i < products.length; i++) {
     if (products[i].product_name == product_name) {
       var cartItem = null;
@@ -82,7 +95,6 @@ function addtoCart(product_name) {
         }
       }
       if (cartItem == null) {
-
         var cartItem = {
           product: products[i],
         };
@@ -92,24 +104,25 @@ function addtoCart(product_name) {
   }
   renderCartTable();
 }
+
 function renderCartTable() {
   var table = '';
   var ele = document.getElementById("demo2");
   ele.innerHTML = '';
-
   table += "<table id='tblCart' border='1'>";
   table += "<tr><td>Product Name</td>";
-  table += "<td>Product Image</td>";
+  table += "<td class=\"prodimage\">Product Image</td>";
   table += "<td>Price</td>";
-  table += "<td>Total</td>";
+  table += "<td>Total(with discount)</td>";
   table += "<td>Action</td></tr>";
-  var Total = 0;
+  Total = 0;
   for (var i = 0; i < cart.length; i++) {
     table += "<tr>";
     table += "<td>" + cart[i].product.product_name + "</td>";
-    table += "<td><img src=" + products[i].product_img + "></td>"; ////
-    table += "<td>" + cart[i].product.product_price + "</td>";
-    table += "<td>" + parseFloat(cart[i].product.product_price) + "</td>";
+    table += "<td class=\"prodimage\"><img src=" + cart[i].product.product_img + "></td>"; ////
+    table += "<td style=\"text-align: center\">" + cart[i].product.product_price + "</td>";
+    table += "<td style=\"text-align: center\">" + parseFloat(cart[i].product.product_price) + "</td>";
+    table += "<td><button type='submit' onClick='deleteProdCart(\"" + cart[i].product.product_name + "\", this);'/>Delete Item</button> &nbsp </td>";
     table += "</tr>";
     Total += parseFloat(cart[i].product.product_price);
   }
@@ -117,6 +130,7 @@ function renderCartTable() {
   table += "</table>";
   ele.innerHTML = table;
 }
+
 function removeItem(product_name) {
   for (var i = 0; i < cart.length; i++) {
     if (cart[i].product.product_name == product_name) {
@@ -125,5 +139,3 @@ function removeItem(product_name) {
   }
   renderCartTable();
 }
-
-//Δεν εχω χρονο να fixαρω τα bugs :D TODO: fix τα < στα prices, να βάλω actions στο cart (Delete), να fixαρω το AddToCart να βάζει το σωστό item

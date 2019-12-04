@@ -42,11 +42,13 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
   captionText.innerHTML = dots[slideIndex - 1].alt;
 }
+
 function start() {
   document.getElementsByClassName("button")[0].disabled = true;
   document.getElementsByClassName("button")[1].disabled = true;
   autoslide;
 }
+
 function init() {
   if ((d.length)) {
     clearInterval(autoslide);
@@ -55,6 +57,7 @@ function init() {
   }
   d.push("1");
 }
+
 function buttonstart() {
   autoslide = setInterval(function () { plusSlides(1); }, 3000);
   autoslide;
