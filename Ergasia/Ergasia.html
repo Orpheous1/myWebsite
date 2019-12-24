@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="Ergasia.js"></script>
+  <link rel="stylesheet" type="text/css" href="Ergasia.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://www.w3schools.com/lib/w3codecolor.js"></script>
+</head>
+
+<body class="w3-container">
+  <ul class="horizontal">
+    <li class="horizontal"><a href="#">Αρχική</a></li>
+    <div class="dropdown">
+      <button class="dropbtn">Ασκήσεις 1
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <li class="verticald"><a href="#Προαπαιτόυμενα">Προαπαιτόυμενα</a></li>
+        <li class="verticald"><a href="#Άσκηση1">Άσκηση 1</a></li>
+        <li class="verticald"><a href="#Άσκηση2">Άσκηση 2</a></li>
+        <li class="verticald"><a href="#Άσκηση2">Άσκηση 3</a></li>
+        <li class="verticald"><a href="#Άσκηση4">Άσκηση 4</a></li>
+        <li class="verticald"><a href="#Άσκηση5">Άσκηση 5</a></li>
+        <li class="verticald"><a href="#Άσκηση6">Άσκηση 6</a></li>
+        <li class="verticald"><a href="#Άσκηση7">Άσκηση 7</a></li>
+        <li class="verticald"><a href="#Άσκηση8">Άσκηση 8</a></li>
+        <li class="verticald"><a href="#Άσκηση9">Άσκηση 9</a></li>
+        <li class="verticald"><a href="#Άσκηση10">Άσκηση 10</a></li>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Ασκήσεις 2
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <li class="verticald"><a href="#Προαπαιτούμενα2">Προαπαιτόυμενα</a></li>
+        <li class="verticald"><a href="#Άσκηση11">Άσκηση 11</a></li>
+        <li class="verticald"><a href="#Άσκηση12">Άσκηση 12</a></li>
+        <li class="verticald"><a href="#Άσκηση13">Άσκηση 13</a></li>
+        <li class="verticald"><a href="#Άσκηση14">Άσκηση 14</a></li>
+        <li class="verticald"><a href="#Άσκηση15">Άσκηση 15</a></li>
+        <li class="verticald"><a href="#Άσκηση16">Άσκηση 16</a></li>
+        <li class="verticald"><a href="#Άσκηση17">Άσκηση 17</a></li>
+        <li class="verticald"><a href="#Άσκηση18">Άσκηση 18</a></li>
+        <li class="verticald"><a href="#Άσκηση19">Άσκηση 19</a></li>
+        <li class="verticald"><a href="#Άσκηση20">Άσκηση 20</a></li>
+      </div>
+    </div>
+    <li class="horizontal"><a href="#Πηγές">Πηγές</a></li>
+  </ul>
+  <div>
+    <center>
+
+    </center>
+  </div>
+  <div class="Askhseis">
+    <center>
+      <h2 id="Προαπαιτούμενα">HTML prerequisites</h2>
+    </center>
+    <ul style="list-style-type: none;">
+    <li>
+      Προαπαιτούμενα: Δημιουργία του canvas. Το canvas είναι μία περιοχή σχήμα παραλληλόγραμμου.
+      Μπορούμε, οπως θα δούμε στις επόμενες ασκήσεις, να τον γεμίσουμε με σχήματα με
+      διάφορες μεθόδους της javascript του στοιχείου canvas. Στην συνέχεια θα δούμε πως μπορούμε όχι μόνο να τον
+      γεμίσουμε με σχήματα αλλά και να αφήσουμε τον χρήστη να ζωγραφίσει με το ποντίκι και να αποθηκεύσουμε την
+      εικόνα
+      που ζωγράφισε ως ενα VARBINARY type στην SQL DB μας. Επιλέγουμε να το αποθηκεύσουμε ως VARBINARY στο
+      database
+      μας και όχι ως απλό αρχείο στο filesystem επειδή είναι πιο efficient<sup><a href=#Πηγή1>1</a></sup><br><br>
+      <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+        Your browser does not support the canvas element.
+      </canvas><br><br>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code htmlHigh notranslate">&lt;canvas id="myCanvas" width="200" height="100"
+            style="border:1px solid #000000;"&gt;<br>
+            Your browser does not support the HTML5 canvas tag.&lt;/canvas&gt;
+          </div>
+        </div>
+      </div>
+      <hr>
+      <center>
+        <h1>Javascript Canvas</h1>
+      </center>
+      <center>
+        <h4>Σε αυτήν την ενότητα θα μάθουμε πως να ζωγραφίζουμε σχήματα στο canvas.</h4>
+      </center>
+    </li>
+    <center>
+      <h2 id="Άσκηση1">Javascript Άσκηση 1: Ευθεία γραμμή και κύκλος σε canvas.</h2>
+    </center>
+    <li>
+      Θα μάθουμε πως να ζωγραφίζουμε μια γραμμή από ένα αρχικό σημείο μέχρι ένα τελικό. Πρώτα θέτουμε το canvas
+      element ώς μια μεταβητή c στη javascript Στη συνέχεια χρησιμοποιούμε τη μέθοδο
+      HTMLCanvasElement.getContext("2d")
+      για να κατασκευάσουμε ένα δισδιάστατο αντικείμενο που κάνει render το context του canvas. Η μέθοδος
+      moveTo(x, y)
+      πρακτικά τοποθετεί έναν αόρατο κέρσορα στο σημείο x, y όπου x,y είναι οι συντεταγμένες των pixel στο canvas,
+      αρχίζοντας από τα αριστερά και πάνω αντίστοιχα. Έπειτα με τη μέθοδο lineTo(x, y) μετακινεί τον αόρατο
+      κέρσορα σε
+      μία ευθεία γραμμή από το τελευταίο σημείο που βρισκόταν (το προηγούμενο x, y του moveTo() που
+      τοποθετήσαμε παραπάνω) μέχρι το x, y που δίνουμε ως argument στο lineTo(). Δεν ζωγραφίζει τη γραμμή. Το
+      αόρατο
+      path που ακολούθησε ο κέρσορας μπορούμε να το ζωγραφίσουμε στο canvas με τη μέθοδο stroke().
+      Παρόμοια, η μέθοδος arc(x, y, r, sAngle, eAngle) σχηματίζει τόξο κύκλου με κέντρο (x,y), ακτίνα r, sAngle αρχική
+      γωνία, eAngle τελική γωνία. Προφανώς για να κατασκευάσουμε κύκλο θα έχουμε sAngle = 0, eAngle = 2π.<br><br>
+      <canvas id="myCanvasAsk1.1" width="200" height="100" style="border:1px solid #000000;"></canvas>
+      <canvas id="myCanvasAsk1.2" width="200" height="100" style="border:1px solid #000000;"></canvas>
+      <script>
+        var c1 = document.getElementById("myCanvasAsk1.1");
+        var c2 = document.getElementById("myCanvasAsk1.2");
+        var ctx1 = c1.getContext("2d");
+        var ctx2 = c2.getContext("2d");
+        ctx1.moveTo(0, 0);
+        ctx1.lineTo(200, 100);
+        ctx1.stroke();
+        ctx2.beginPath();
+        ctx2.arc(100, 50, 50, 0, 2 * Math.PI);
+        ctx2.stroke();
+      </script>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            var c1 = document.getElementById("myCanvasAsk1.1");<br>
+            var c2 = document.getElementById("myCanvasAsk1.2");<br>
+            var ctx1 = c1.getContext("2d");<br>
+            var ctx2 = c2.getContext("2d");<br>
+            ctx1.moveTo(0, 0);<br>
+            ctx1.lineTo(200, 100);<br>
+            ctx1.stroke();<br>
+            ctx2.beginPath();<br>
+            ctx2.arc(100, 50, 50, 0, 2 * Math.PI);<br>
+            ctx2.stroke();<br>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <center>
+        <h2 id="Άσκηση2">Javascript Άσκηση 2 + 3: Αρχικοποίηση, τελικοποίηση και στυλάρισμα γραμμής του path.</h2>
+      </center>
+      Με τη ιδιότητα strokeStyle μπορούμε να αλλάξουμε το χρώμα των path που ζωγραφίζουμε, είτε στατικά είτε βαθμωτά
+      με κάποιο gradient. Ας δούμε ένα στατικό χρώμα. Η ιδιότητα strokeStyle δέχεται όλους τους τύπους <a
+        href="https://www.w3schools.com/cssref/css_colors_legal.asp">CSS color
+        values</a>. Κάποιες άλλες ιδιότητες είναι το lineWidth που ορίζει το πλάτος του stroke, το lineCap που
+      μετασχηματίζει τα άκρα των σχημάτων και το lineJoin μετασχηματίζει τα σημεία που τέμνονται 2 σχήματα.<br>
+      Επιπλέον με τη μέθοδο beginPath() αρχικοποιούμε τον αόρατο κέρσορα για να σχηματίσουμε κάποιο άλλο σχήμα που να
+      μην αρχίζει από το τελευταίο σημείο του κέρσορα και με τη μέθοδο closePath() γυρνάμε τον κέρσορα στο αρχικό του
+      σημείο "κλείνοντας" το path που σχηματίσαμε.<br>
+      <canvas id="myCanvasAsk2.1" width="250" height="120" style="border:1px solid #000000;"></canvas>
+      <canvas id="myCanvasAsk2.2" width="250" height="120" style="border:1px solid #000000;"></canvas>
+      <canvas id="myCanvasAsk2.3" width="250" height="120" style="border:1px solid #000000;"></canvas>
+      <script>
+        var c1 = document.getElementById("myCanvasAsk2.1");
+        var ctx1 = c1.getContext("2d");
+        var c2 = document.getElementById("myCanvasAsk2.2");
+        var ctx2 = c2.getContext("2d");
+        var c3 = document.getElementById("myCanvasAsk2.3");
+        var ctx3 = c3.getContext("2d");
+        ctx1.beginPath();
+        ctx1.lineWidth = "5";
+        ctx1.strokeStyle = "green"; // Green path
+        ctx1.moveTo(0, 75);
+        ctx1.lineTo(250, 75);
+        ctx1.stroke(); // Draw it
+        ctx1.beginPath();
+        ctx1.strokeStyle = "purple"; // Purple path
+        ctx1.moveTo(50, 0);
+        ctx1.lineTo(150, 130);
+        ctx1.stroke();
+
+        ctx2.beginPath();
+        ctx2.lineWidth = 10;
+        ctx2.lineCap = "butt";
+        ctx2.moveTo(20, 20);
+        ctx2.lineTo(200, 20);
+        ctx2.stroke();
+        ctx2.beginPath();
+        ctx2.lineCap = "round";
+        ctx2.moveTo(20, 40);
+        ctx2.lineTo(200, 40);
+        ctx2.stroke();
+        ctx2.beginPath();
+        ctx2.lineCap = "square";
+        ctx2.moveTo(20, 60);
+        ctx2.lineTo(200, 60);
+        ctx2.stroke();
+
+        ctx3.beginPath();
+        ctx3.lineWidth = 10;
+        ctx3.lineJoin = "round";
+        ctx3.moveTo(20, 20);
+        ctx3.lineTo(100, 50);
+        ctx3.lineTo(20, 100);
+        ctx3.closePath();
+        ctx3.stroke();
+      </script>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            var c1 = document.getElementById("myCanvasAsk2.1");<br>
+            var ctx1 = c1.getContext("2d");<br>
+            var c2 = document.getElementById("myCanvasAsk2.2");<br>
+            var ctx2 = c2.getContext("2d");<br>
+            var c3 = document.getElementById("myCanvasAsk2.3");<br>
+            var ctx3 = c3.getContext("2d");<br><br>
+            ctx1.beginPath();<br>
+            ctx1.lineWidth = "5";<br>
+            ctx1.strokeStyle = "green";<br>
+            ctx1.moveTo(0, 75);<br>
+            ctx1.lineTo(250, 75);<br>
+            ctx1.stroke();<br>
+            ctx1.beginPath();<br>
+            ctx1.strokeStyle = "purple";<br>
+            ctx1.moveTo(50, 0);<br>
+            ctx1.lineTo(150, 130);<br>
+            ctx1.stroke();<br><br>
+            ctx2.beginPath();<br>
+            ctx2.lineWidth = 10;<br>
+            ctx2.lineCap = "butt";<br>
+            ctx2.moveTo(20, 20);<br>
+            ctx2.lineTo(200, 20);<br>
+            ctx2.stroke();<br>
+            ctx2.beginPath();<br>
+            ctx2.lineCap = "round";<br>
+            ctx2.moveTo(20, 40);<br>
+            ctx2.lineTo(200, 40);<br>
+            ctx2.stroke();<br>
+            ctx2.beginPath();<br>
+            ctx2.lineCap = "square";<br>
+            ctx2.moveTo(20, 60);<br>
+            ctx2.lineTo(200, 60);<br>
+            ctx2.stroke();<br><br>
+            ctx3.beginPath();<br>
+            ctx3.lineWidth = 10;<br>
+            ctx3.lineJoin = "round";<br>
+            ctx3.moveTo(20, 20);<br>
+            ctx3.lineTo(100, 50);<br>
+            ctx3.lineTo(20, 100);<br>
+            ctx3.closePath();<br>
+            ctx3.stroke();<br>
+          </div>
+        </div>
+    </li>
+    <li>
+      <center>
+        <h2 id="Άσκηση4">Javascript Άσκηση 4: Συνδυάζοντας τα παραπάνω.</h2>
+      </center>
+      Μπορούμε πλέον με τις γνώσεις που έχουμε να κατασκευάσουμε μια συνάρτηση που θα ζωγραφίζει σε ένα canvas από ένα
+      αρχικό σημείο μέχρι ένα τελικό μια ευθέια με κάποιο συγκεκριμένο στυλ.<br>
+      <canvas id="myCanvasAsk3" width="250" height="120" style="border:1px solid #000000;"></canvas>
+      <script>
+        function draw(ctx, color, lineWidth, x1, y1, x2, y2) {
+          ctx.beginPath();
+          ctx.strokeStyle = color;
+          ctx.lineWidth = lineWidth;
+          ctx.lineCap = 'round';
+          ctx.lineJoin = 'round';
+          ctx.moveTo(x1, y1);
+          ctx.lineTo(x2, y2);
+          ctx.stroke();
+          ctx.closePath();
+        }
+        var cAsk3 = document.getElementById("myCanvasAsk3");
+        var ctxAsk3 = cAsk3.getContext("2d");
+        draw(ctxAsk3, "yellow", 10, 50, 80, 150, 50);
+      </script>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            function draw(ctx, color, lineWidth, x1, y1, x2, y2) {<br>
+            ctx.beginPath();<br>
+            ctx.strokeStyle = color;<br>
+            ctx.lineWidth = lineWidth;<br>
+            ctx.lineCap = 'round';<br>
+            ctx.lineJoin = 'round';<br>
+            ctx.moveTo(x1, y1);<br>
+            ctx.lineTo(x2, y2);<br>
+            ctx.stroke();<br>
+            ctx.closePath();<br>
+            }<br>
+            var cAsk3 = document.getElementById("myCanvasAsk3");<br>
+            var ctxAsk3 = cAsk3.getContext("2d");<br>
+            draw(ctxAsk3, "yellow", 10, 50, 80, 150, 50);<br>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <center>
+        <h2 id="Άσκηση5">Javascript Άσκηση 5: Γέμισμα και άδειασμα του canvas.</h2>
+      </center>
+      Με τις μεθόδους fillRect() και clearRect() μπορούμε να σχηματίσουμε συμπαγή παραλληλόγραμμα ή να αφαιρέσουμε
+      παραλληλόγραμμα κομμάτια αντίστοιχα. Η ιδιότητα fillStyle είναι το χρώμα της μεθόδου fillRect(). Επιπλέον
+      παρακάτω
+      κατασκευάζουμε μία συνάρτηση που καθαρίζει το canvas.<br>
+      <canvas id="myCanvasAsk5" width="250" height="120" style="border:1px solid #000000;"></canvas>
+      <script>
+        var c = document.getElementById("myCanvasAsk5");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(0, 0, 300, 150);
+        ctx.clearRect(20, 20, 100, 50);
+      </script>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            var c = document.getElementById("myCanvasAsk5");<br>
+            var ctx = c.getContext("2d");<br>
+            ctx.fillStyle = "red";<br>
+            ctx.fillRect(0, 0, 300, 150);<br>
+            ctx.clearRect(20, 20, 100, 50);<br><br>
+            function erase(ctx, canvas) {<br>
+            ctx.clearRect(0, 0, canvas.width, canvas.height);<br>
+            }<br>
+          </div>
+        </div>
+      </div>
+    </li>
+    <hr>
+    <center>
+      <h1>User input</h1>
+    </center>
+    <center>
+      <h4>Σε αυτή την ενότητα θα δούμε πως μπορούμε να δεχόμαστε user input από το χρήστη για να ζωγραφίσει στο canvas
+        με το ποντίκι.</h4>
+    </center>
+    <li>
+      <center>
+        <h2 id="Άσκηση6">Javascript Άσκηση 6: Event Listeners.</h2>
+      </center>
+      Τα event listeners στην Javascript είναι διαδικασίες που περιμένουν ένα event να πραγματικοποιηθεί πάνω σε ένα
+      element και στην συνέχεια εκτελούν μια συνάρτηση. Για παράδειγμα μπορούμε να συνδέσουμε το (event: Ο χρήστης να
+      κάνει κλικ) σε ένα (element: button) με μια (συνάρτηση: εκτύπωση λεξης).<br><br>
+      <button id="myBtn">Try it</button>
+      <p id="demo"></p>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            document.getElementById("myBtn").addEventListener("click", function(){<br>
+            document.getElementById("demo").innerHTML = "Hello World";<br>
+            });<br>
+          </div>
+        </div>
+      </div>
+      <script>
+        document.getElementById("myBtn").addEventListener("click", function () {
+          document.getElementById("demo").innerHTML = "Hello World";
+        });
+      </script>
+    </li>
+    <li>
+      <center>
+        <h2 id="Άσκηση7">Javascript Άσκηση 7: Event Listeners πάνω στο canvas.</h2>
+      </center>
+      Μπορούμε να χρησιμοποιήσουμε διάφορα events. Κάποια χρήσιμα στο σκοπό μας είναι τα mousemove, mousedown,
+      mouseup, και mouseout. Το τελευταίο πραγματοποιείται όταν ο κέρσορας φύγει έξω από το element του canvas. Στη
+      συνέχεια θα γράψουμε μια συνάρτηση που "διαβάζει" σε ποιο σημείο πάνω στο canvas είναι ο κέρσορας και ζωγραφίζει
+      ανάλογα με το event που δέχεται. Για παράδειγμα αν ο χρήστης πατήσει κλικ και το κρατήσει απο ένα σημείο x1, y1,
+      το σύρει το αφήσει σε ένα σημείο x2, y2, σκοπός μας είναι να ζωγραφίσουμε αυτό το κομμάτι στο canvas. Αν βγει
+      έξω από το canvas πρέπει να σταματήσουμε να ζωγραφίζουμε.
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            function addevents() {<br>
+            canvas.addEventListener("mousemove", function (e) {<br>
+            findxy('move', e)<br>
+            }, false);<br>
+            canvas.addEventListener("mousedown", function (e) {<br>
+            findxy('down', e)<br>
+            }, false);<br>
+            canvas.addEventListener("mouseup", function (e) {<br>
+            findxy('up', e)<br>
+            }, false);<br>
+            canvas.addEventListener("mouseout", function (e) {<br>
+            findxy('out', e)<br>
+            }, false);<br>
+            }<br>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <center>
+        <h2 id="Άσκηση8">Javascript Άσκηση 8: Κατασκευή της findxy μέρος 1: offsets και initialization.</h2>
+      </center>
+      Αρχικά θα φτιάξουμε ένα option για να καθαρίζει το canvas κάθε φορά που σηκώνουμε και ξανατοποθετούμε τον
+      κέρσορα. Αυτό το πετυχαίνουμε με την erase συνάρτηση που γράψαμε στην <a href="#Άσκηση5">Άσκηση 5</a>. Επίσης
+      αρχικοποιούμε τον πίνακα των path που κρατάει όλα τα pixel που πάτησε με κρατημένο τον κέρσορα πάνω στον
+      πίνακα(θα το κατασκευάσουμε σε επόμενη Άσκηση). Στη συνέχεια πρέπει να ορίσουμε τα offset ώστε να καταλαβαίνει
+      το event listener σε ποιό σημέιο βρίσκεται ο κέρσορας πάνω στο canvas για να το περάσουμε αργότερα στο path.
+      Χρησιμοποιούμε τα properties pageX και PageY του WebAPI MouseEvent για να ξέρουμε την απόλυτη
+      θέση του κέρσορα πάνω στη σελίδα(αρχίζοντας απο αριστερά και πάνω αντίστοιχα). Έπειτα αφαιρόυμε το offset του
+      canvas για να βρεθούμε μέσα στο canvas. Αν το canvas
+      είναι τοποθετημένο σε scrollable σελίδα τότε πρέπει να προσθέσουμε και το πόσα pixel εχει scrollάρει ο χρήστης.
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            function findxy(res, e) {<br><br>
+            if (res == 'down') {<br><br>
+            if (clearBeforeDraw == true) {<br>
+            ctx.erase(0, 0, canvas.width, canvas.height);<br>
+            paths = [];<br>
+            clearBeforeDraw = false;<br>
+            }<br>
+            <br>
+            if (e.pageX != undefined && e.pageY != undefined) {<br>
+            currX = e.pageX - canvas.offsetLeft;<br>
+            currY = e.pageY - canvas.offsetTop;<br>
+            } else {<br>
+            currX = e.clientX + document.body.scrollLeft<br>
+            + document.documentElement.scrollLeft<br>
+            - canvas.offsetLeft;<br>
+            currY = e.clientY + document.body.scrollTop<br>
+            + document.documentElement.scrollTop<br>
+            - canvas.offsetTop;<br>
+            //συνέχεια στις υπόλοιπες ασκήσεις<br>
+            }<br>
+            }<br>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <center>
+        <h2 id="Άσκηση9">Javascript Άσκηση 9: Κατασκευή της findxy μέρος 2: mousedown, mouseup και out.</h2>
+      </center>
+      Σε αυτό το κομμάτι θα δούμε τι γίνεται όταν ο χρήστης πατάει κλικ μέσα στο canvas. Χρησιμοποιούμε μεθόδους που
+      μάθαμε στις <a href="#Άσκηση1">Ασκήσεις 1-5</a>. Όταν ο χρήστης πατάει κλικ ζωγραφίζουμε έναν κύκλο ακτίνας
+      μισού
+      lineWidth(επειδή όταν κουνάει το ποντίκι στη συνέχεια θα ζωγραφίσουμε ευθέιες ανάμεσα στα pixel που κουνήθηκε το
+      ποντίκι
+      πλάτους lineWidth) και τον γεμίζουμε. Έπειτα προσθέτουμε τα σημεία που πάτησε κλικ ο χρήστης στο array paths.
+      Όταν αφήνει
+      το κλικ ο χρήστης ή βγαίνει εκτός του canvas αλλάζουμε το painFlag για να ξέρουμε ότι πρέπει να σταματήσουμε να
+      ζωγραφίζουμε.
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            ctx.beginPath();<br>
+            ctx.lineWidth = 1;<br>
+            ctx.arc(currX, currY, lineWidth / 2, 0, 2 * Math.PI);<br>
+            ctx.stroke();<br>
+            ctx.closePath();<br>
+            ctx.fill();<br>
+            <br>
+            paths.push([[currX], [currY]]);<br>
+            paintFlag = true;<br>
+            }<br>
+            if (res == 'up' || res == "out") {<br>
+            paintFlag = false;<br>
+            }<br>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li>
+      <center>
+        <h2 id="Άσκηση10">Javascript Άσκηση 10: Κατασκευή της findxy μέρος 2: move.</h2>
+      </center>
+      Όπως κάναμε και στην <a href="#Άσκηση8">Άσκηση 8</a> βρίσκουμε τη θέση του ποντικιού πάνω στο canvas και κάθε φορά
+      που κουνιέται ο κέρσορας
+      αποθηκέυουμε τα pixel τα οποία πέρασε στο array paths. Κάθε φορά που αλλάζει pixel ζωγραφίζουμε μια ευθέια γραμμή
+      από το προηγούμενο στο επόμενο pixel με την
+      συνάρτηση draw() που κατασκευάσαμε στην <a href="#Άσκηση4">Άσκηση 4</a>.
+      <br>
+      <div class="w3-panel w3-card w3-light-grey">
+        <h3>Πώς να το φτιάξεις</h3>
+        <div class="w3-container w3-white">
+          <div class="w3-code jsHigh notranslate">
+            if (res == 'move') {<br>
+            if (paintFlag) {<br>
+            // Ζωγράφιζουμε ευθεία γραμμή από την τωρινή θέση του ποντικιού μέχρι την προηγούμενη<br>
+            prevX = currX;<br>
+            prevY = currY;<br>
+            if (e.pageX != undefined && e.pageY != undefined) {<br>
+            currX = e.pageX - canvas.offsetLeft;<br>
+            currY = e.pageY - canvas.offsetTop;<br>
+            } else {<br>
+            currX = e.clientX + document.body.scrollLeft<br>
+            + document.documentElement.scrollLeft<br>
+            - canvas.offsetLeft;<br>
+            currY = e.clientY + document.body.scrollTop<br>
+            + document.documentElement.scrollTop<br>
+            - canvas.offsetTop;<br>
+            }<br>
+            currPath = paths[paths.length - 1];<br>
+            currPath[0].push(currX);<br>
+            currPath[1].push(currY);<br>
+            paths[paths.length - 1] = currPath;<br>
+            draw(ctx, color, lineWidth, prevX, prevY, currX, currY);<br>
+            }<br>
+            }<br>
+          </div>
+        </div>
+      </div>
+    </li>
+    <hr>
+    <center>
+      <h2>Τελικά:</h2>
+    </center>
+    <canvas id="can" width="500" height="500" style="border:1px solid #000000; position: relative; left: 37%;"></canvas>
+    <script>
+      var canvas;
+      var ctx;
+      var prevX = 0;
+      var currX = 0;
+      var prevY = 0;
+      var currY = 0;
+      var paths = []; // recording paths
+      var paintFlag = false;
+      var color = "black";
+      var lineWidth = 20;
+      var clearBeforeDraw = false;
+      function init() {
+        canvas = document.getElementById('can');
+        ctx = canvas.getContext("2d");
+
+        canvas.addEventListener("mousemove", function (e) {
+          findxy('move', e)
+        }, false);
+        canvas.addEventListener("mousedown", function (e) {
+          findxy('down', e)
+        }, false);
+        canvas.addEventListener("mouseup", function (e) {
+          findxy('up', e)
+        }, false);
+        canvas.addEventListener("mouseout", function (e) {
+          findxy('out', e)
+        }, false);
+      }
+      function draw(ctx, color, lineWidth, x1, y1, x2, y2) {
+        ctx.beginPath();
+        ctx.strokeStyle = color;
+        ctx.lineWidth = lineWidth;
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+        ctx.closePath();
+      }
+
+      function erase() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      function findxy(res, e) {
+        if (res == 'down') {
+          if (clearBeforeDraw == true) {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            paths = [];
+            clearBeforeDraw = false;
+          }
+
+          if (e.pageX != undefined && e.pageY != undefined) {
+            currX = e.pageX - canvas.offsetLeft;
+            currY = e.pageY - canvas.offsetTop;
+          } else {
+            currX = e.clientX + document.body.scrollLeft
+              + document.documentElement.scrollLeft
+              - canvas.offsetLeft;
+            currY = e.clientY + document.body.scrollTop
+              + document.documentElement.scrollTop
+              - canvas.offsetTop;
+          }
+          ctx.beginPath();
+          ctx.lineWidth = 1;
+          ctx.arc(currX, currY, lineWidth / 2, 0, 2 * Math.PI);
+          ctx.stroke();
+          ctx.closePath();
+          ctx.fill();
+
+          paths.push([[currX], [currY]]);
+          paintFlag = true;
+        }
+        if (res == 'up' || res == "out") {
+          paintFlag = false;
+          console.log(paths)
+        }
+
+        if (res == 'move') {
+          if (paintFlag) {
+            prevX = currX;
+            prevY = currY;
+            if (e.pageX != undefined && e.pageY != undefined) {
+              currX = e.pageX - canvas.offsetLeft;
+              currY = e.pageY - canvas.offsetTop;
+            } else {
+              currX = e.clientX + document.body.scrollLeft
+                + document.documentElement.scrollLeft
+                - canvas.offsetLeft;
+              currY = e.clientY + document.body.scrollTop
+                + document.documentElement.scrollTop
+                - canvas.offsetTop;
+            }
+            currPath = paths[paths.length - 1];
+            currPath[0].push(currX);
+            currPath[1].push(currY);
+            paths[paths.length - 1] = currPath;
+            draw(ctx, color, lineWidth, prevX, prevY, currX, currY);
+          }
+        }
+      }
+      init();
+    </script><br><br>
+    <button id="btn" onclick="erase()" style="position: relative; left: 48.2%;">Εκκαθάριση</button>
+    <li>
+      <center>
+        <h2 id="Προαπαιτούμενα2">Prerequisites 2.1: AJAX, ασυχρονη επικοινωνια και XMLHttpRequest.</h2>
+      </center>
+      Το AJAX (Asynchronous JavaScript And XML) είναι ένα σύνολο τεχνικών που επιτρέπει στους developers να διαβάζουν
+      δεδομένα από τον server αφού η σελίδα
+      έχει φορτώσει, να αλλάζουν τη σελίδα με δεδομένα από το server χωρίς να χρειάζεται να ανανεωθεί και να στείλουν
+      δεδομένα στον server. Για να το χρησιμοποιήσουμε πρέπει να κατασκευάσουμε ένα αντικέιμενο XMLHttpRequest με το
+      οποίο
+      θα στέλνουμε στον server οδηγίες(μπορεί να είναι δεδομένα για να τα αποθηκεύσει ή να ζητήσει(query) δεδομένα τα
+      οποία μπορούμε να δεχτούμε και
+      να τα χρησιμοποιήσουμε στον javascript κώδικά μας). Το παρακάτω διάγραμμα δείχνει πώς δουλεύει ένα request.
+      <img src="../Images/pic_ajax.gif" class="center" width=569 height=324>
+    </li>
+    <li>
+      <center>
+        <h2 id="Προαπαιτούμενα3">Prerequisites 2.2: Σύχρονες και ασύχρονες συναρτήσεις και requests.</h2>
+      </center>
+      Synchronous: παραγγέλνω έναν καφέ και περιμένω στον ταμείο μέχρι να γίνει το αφρόγαλα για να πάρω τον καφέ μου.<br>
+      Asynchronous: Στέλνω μήνυμα να μου ετοιμάσουν τον καφέ και πάω να κάνω κάτι άλλο μέχρι να με ειδοποιήσουν ότι ο καφές είναι έτοιμος.
+      Πιο τεχνικά:<br>
+      Όταν εκτελείται μια συνάρτηση(ή ένα request) σύχρονα ο υπολογιστής περιμένει να τελειώσει πριν προχωρήσει στο υπόλοιπο πρόγραμμα.
+      Όταν εκτελείται ασύχρονα μια συνάρτηση, ο υπολογιστής μπορεί να προχωρήσει και να συνεχίσει το υπόλοιπο πρόγραμμα μέχρι να τελεώσει.
+      Στα request μας βολεύει η ασύχρονη επικοινωνία με τον server επειδή μπορεί το query/request μας να αργήσει αισθητό χρόνο και
+      δεν υπάρχει λόγος να σταματήσουμε όλη τη σελίδα μέχρι να μας απαντήσει ο server.
+    </li>
+    <li>
+      <center>
+        <h2 id="Άσκηση11">AJAX Άσκηση 1: readyState, onreadystatechange, status, responseText, εκτέλεση ενός απλού query</h2>
+      </center>
+      Η ιδιότητα readyState του XMLHttpRequest μας δίνει πληροφορίες για την κατάσταση που βρίσκεται το request που πραγματοποιούμε.
+      Παίρνει τιμές (0: δεν άρχισε το request) (1: επιτυχής σύνδεση με τον server) (2: ελήφθη το request) (3: επεξεργάζεται το request)
+      (4: τελείωσε το request, η απάντηση είναι έτοιμη). Η ιδιότητα onreadystatechange εκτελεί μια συνάρτηση κάθε φορά που το readyState αλλάζει.
+      H ιδιότητα status μας δίνει πληροφορίες για την κατάσταση του server. Παίρνει τιμές (200: "OK") (403: "Forbidden") (404: "Page not found").
+      Τέλος, η ιδιότητα responseText επιστρέφει το text που μας έστειλε ο server ως απάντηση.
+      Στην άσκησή μας θέλουμε να κατασκευάσουμε ένα request που να διαβάζει δεδομένα
+      από ένα αρχείο στο server και να μας το δίνει τα περιεχόμενα στη javascript από όπου μπορούμε να τα τυπώσουμε στη σελίδα μας.
+      Αρχικά κατασκευάζουμε ένα XMLHttpRequest και σε κάθε αλλαγή κατάστασης ελέγχουμε αν ο server είναι OK, το request τελείωσε και η απάντηση είναι έτοιμη
+      και στη συνέχεια παίρνουμε την απάντηση με το responseText. Η μέθοδος open στέλνει ένα GET request στον server σε ένα συγκεκριμένο αρχείο. Ως τρίτο
+      argument στη μέθοδο open μπορούμε να θέσουμε το request μας ως σύχρονο ή ασύχρονο.
+    </li>
+    <div id="ajaxex">
+      <h2>The XMLHttpRequest Object</h2>
+      <button type="button" id="ajaxbtn" onclick="printfile()">Change Content</button>
+      </div>
+      <script>
+        function printfile() {
+          var xhttp = new XMLHttpRequest();
+          xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              document.getElementById("ajaxex").innerHTML += "<br><br>" +
+              this.responseText;
+              console.log(this.responseText);
+              document.getElementById("ajaxbtn").disabled = true;
+            }
+          };
+          //xhttp.open("GET", "http://localhost:8000/ergasia_ajax_file.txt", true); //Na 8ymi8w na to svhsw
+          xhttp.open("GET", "ergasia_ajax_file.txt", true);
+          xhttp.send();
+        }
+        </script>
+        <div class="w3-panel w3-card w3-light-grey">
+          <h3>Πώς να το φτιάξεις</h3>
+          <div class="w3-container w3-white">
+            <div class="w3-code jsHigh notranslate">
+              function printfile() {<br>
+                var xhttp = new XMLHttpRequest();<br>
+                xhttp.onreadystatechange = function() {<br>
+                  if (this.readyState == 4 && this.status == 200) {<br>
+                    document.getElementById("ajaxex").innerHTML += <br>
+                    this.responseText;<br>
+                    console.log(this.responseText);<br>
+                    document.getElementById("ajaxbtn").disabled = true;<br>
+                  }<br>
+                };<br>
+                xhttp.open("GET", "ergasia_ajax_file.txt", true);<br>
+                xhttp.send();<br>
+              }<br>
+            </div>
+          </div>
+    </ul>
+  </div>
+  <hr>
+  <div class="Πηγές" id="Πηγές">
+    <center>
+      <h2>Πηγές</h2>
+    </center>
+    <ul>
+      <li>
+        <cite id="Πηγή1">Sears, Russell & Ingen, Catharine & Gray, Jim. (2007). To BLOB or Not To BLOB: Large Object
+          Storage
+          in a
+          Database or a
+          Filesystem?. Computing Research Repository - CORR. </a></cite><a
+          href="https://www.microsoft.com/en-us/research/wp-content/uploads/2006/04/tr-2006-45.pdf"
+          target="_blank">View</a>
+      </li>
+    </ul>
+  </div>
+  <script>w3CodeColor();</script>
+</body>
+
+</html>

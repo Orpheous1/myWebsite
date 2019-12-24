@@ -5,9 +5,9 @@ function main() {
   stack.push(stack[0]);
   stack.shift();
   for (l = 0; l < 4; l++) {
-    x[l].style.backgroundImage = stack[l];
+    x[l].style.backgroundImage = stack[l+1];
   }
-    x[2].style.backgroundImage = stack[3];
+    x[3].style.backgroundImage = stack[3];
     x[3].style.backgroundImage = stack[2];
   console.log(stack);
 }
